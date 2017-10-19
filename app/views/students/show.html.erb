@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @student.last_name %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @student.first_name %>
+</p>
+
+<p>
+  <strong>Home address:</strong>
+  <%= @student.home_address %>
+</p>
+
+<p>
+  <strong>Home city:</strong>
+  <%= @student.home_city %>
+</p>
+
+<p>
+  <strong>Home state:</strong>
+  <%= @student.home_state %>
+</p>
+
+<p>
+  <strong>Home zip:</strong>
+  <%= @student.home_zip %>
+</p>
+
+<p>
+  <strong>School year address:</strong>
+  <%= @student.school_year_address %>
+</p>
+
+<p>
+  <strong>School year city:</strong>
+  <%= @student.school_year_city %>
+</p>
+
+<p>
+  <strong>School year zip:</strong>
+  <%= @student.school_year_zip %>
+</p>
+
+<p>
+  <strong>Room number:</strong>
+  <%= @student.room_number %>
+</p>
+
+<p>
+  <strong>Home phone:</strong>
+  <%= @student.home_phone %>
+</p>
+
+<p>
+  <strong>Cell phone:</strong>
+  <%= @student.cell_phone %>
+</p>
+
+<p>
+  <strong>New student:</strong>
+  <%= @student.new_student %>
+</p>
+
+<p>
+  <strong>Returning student:</strong>
+  <%= @student.returning_student %>
+</p>
+
+<p>
+  <strong>Athletic team:</strong>
+  <%= @student.athletic_team %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

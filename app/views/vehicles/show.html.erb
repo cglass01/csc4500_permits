@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @vehicle.year %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @vehicle.color %>
+</p>
+
+<p>
+  <strong>Make:</strong>
+  <%= @vehicle.make %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @vehicle.model %>
+</p>
+
+<p>
+  <strong>License number:</strong>
+  <%= @vehicle.license_number %>
+</p>
+
+<p>
+  <strong>State licensed:</strong>
+  <%= @vehicle.state_licensed %>
+</p>
+
+<p>
+  <strong>Experation year:</strong>
+  <%= @vehicle.experation_year %>
+</p>
+
+<p>
+  <strong>Permits permit number:</strong>
+  <%= @vehicle.permits_permit_number %>
+</p>
+
+<p>
+  <strong>Faculty auid:</strong>
+  <%= @vehicle.faculty_auID %>
+</p>
+
+<p>
+  <strong>Students auid:</strong>
+  <%= @vehicle.students_auID %>
+</p>
+
+<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
+<%= link_to 'Back', vehicles_path %>

@@ -1,0 +1,67 @@
+<%= form_with(model: vehicle, local: true) do |form| %>
+  <% if vehicle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+
+      <ul>
+      <% vehicle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.text_field :year, id: :vehicle_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color, id: :vehicle_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :make %>
+    <%= form.text_field :make, id: :vehicle_make %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_field :model, id: :vehicle_model %>
+  </div>
+
+  <div class="field">
+    <%= form.label :license_number %>
+    <%= form.text_field :license_number, id: :vehicle_license_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state_licensed %>
+    <%= form.text_field :state_licensed, id: :vehicle_state_licensed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :experation_year %>
+    <%= form.text_field :experation_year, id: :vehicle_experation_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :permits_permit_number %>
+    <%= form.text_field :permits_permit_number, id: :vehicle_permits_permit_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :faculty_auID %>
+    <%= form.text_field :faculty_auID, id: :vehicle_faculty_auID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :students_auID %>
+    <%= form.text_field :students_auID, id: :vehicle_students_auID %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

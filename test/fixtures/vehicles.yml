@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  year: MyString
+  color: MyString
+  make: MyString
+  model: MyString
+  license_number: MyString
+  state_licensed: MyString
+  experation_year: MyString
+  permits_permit_number: MyString
+  faculty_auID: MyString
+  students_auID: MyString
+
+two:
+  year: MyString
+  color: MyString
+  make: MyString
+  model: MyString
+  license_number: MyString
+  state_licensed: MyString
+  experation_year: MyString
+  permits_permit_number: MyString
+  faculty_auID: MyString
+  students_auID: MyString
