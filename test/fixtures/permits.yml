@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_issued: 
+  issued_by: MyString
+  date_entered: 
+  entered_by: MyString
+
+two:
+  date_issued: 
+  issued_by: MyString
+  date_entered: 
+  entered_by: MyString
