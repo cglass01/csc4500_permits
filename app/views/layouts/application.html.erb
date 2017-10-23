@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Csc4500Permits</title>
+    <title>Permits</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <%= yield %>
+  <body>  
+  <%= render partial: "shared/navbar" %>
+    <% if notice %><div class="alert alert-info"><%= notice %></div><% end %>
+	  <% if alert %><div class="alert alert-warning"><%= alert %></div><% end %>
+  <%= yield %>
+  
+  
   </body>
 </html>
