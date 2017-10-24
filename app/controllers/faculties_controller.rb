@@ -1,11 +1,13 @@
 class FacultiesController < ApplicationController
   before_action :set_faculty, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  after_action :verify_authorized
 
   # GET /faculties
   # GET /faculties.json
   def index
     @faculties = Faculty.all
+    authorize @faculties
   end
 
   # GET /faculties/1
@@ -16,6 +18,7 @@ class FacultiesController < ApplicationController
   # GET /faculties/new
   def new
     @faculty = Faculty.new
+    authorize @faculty
   end
 
   # GET /faculties/1/edit
@@ -26,6 +29,7 @@ class FacultiesController < ApplicationController
   # POST /faculties.json
   def create
     @faculty = Faculty.new(faculty_params)
+    authorize @faculty
 
     respond_to do |format|
       if @faculty.save
@@ -66,6 +70,7 @@ class FacultiesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_faculty
       @faculty = Faculty.find(params[:id])
+      authorize @faculty
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

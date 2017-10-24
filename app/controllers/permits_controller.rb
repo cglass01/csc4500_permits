@@ -1,11 +1,13 @@
 class PermitsController < ApplicationController
   before_action :set_permit, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  after_action :verify_authorized
 
   # GET /permits
   # GET /permits.json
   def index
     @permits = Permit.all
+    authorize @permits
   end
 
   # GET /permits/1
@@ -16,6 +18,7 @@ class PermitsController < ApplicationController
   # GET /permits/new
   def new
     @permit = Permit.new
+    authorize @permit
   end
 
   # GET /permits/1/edit
@@ -26,6 +29,7 @@ class PermitsController < ApplicationController
   # POST /permits.json
   def create
     @permit = Permit.new(permit_params)
+    authorize @permit
 
     respond_to do |format|
       if @permit.save
@@ -66,6 +70,7 @@ class PermitsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_permit
       @permit = Permit.find(params[:id])
+      authorize @permit
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

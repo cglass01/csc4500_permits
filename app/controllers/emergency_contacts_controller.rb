@@ -1,11 +1,13 @@
 class EmergencyContactsController < ApplicationController
   before_action :set_emergency_contact, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  after_action :verify_authorized
 
   # GET /emergency_contacts
   # GET /emergency_contacts.json
   def index
     @emergency_contacts = EmergencyContact.all
+    authorize @emergency_contacts
   end
 
   # GET /emergency_contacts/1
@@ -16,6 +18,7 @@ class EmergencyContactsController < ApplicationController
   # GET /emergency_contacts/new
   def new
     @emergency_contact = EmergencyContact.new
+    authorize @emergency_contact
   end
 
   # GET /emergency_contacts/1/edit
@@ -26,6 +29,7 @@ class EmergencyContactsController < ApplicationController
   # POST /emergency_contacts.json
   def create
     @emergency_contact = EmergencyContact.new(emergency_contact_params)
+    authorize @emergency_contact
 
     respond_to do |format|
       if @emergency_contact.save
@@ -66,6 +70,7 @@ class EmergencyContactsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_emergency_contact
       @emergency_contact = EmergencyContact.find(params[:id])
+      authorize @emergency_contact
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
