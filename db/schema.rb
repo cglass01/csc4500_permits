@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20171024135904) do
 
-  create_table "emergency_contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "emergency_contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "last_name"
     t.string "first_name"
     t.string "address"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20171024135904) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "faculties", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "faculties", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "last_name"
     t.string "first_name"
     t.string "home_address"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20171024135904) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "permits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "permits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.datetime "date_issued"
     t.string "issued_by"
     t.date "date_entered"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20171024135904) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "last_name"
     t.string "first_name"
     t.string "home_address"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20171024135904) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20171024135904) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "vehicles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "vehicles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "year"
     t.string "color"
     t.string "make"
