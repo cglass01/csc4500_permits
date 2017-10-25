@@ -8,6 +8,8 @@
 /.bundle/
 /bundler_stubs/
 
+/config/database.yml
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
