@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Vehicles</h1>
 
 <table>
@@ -15,31 +13,37 @@
       <th>Permits permit number</th>
       <th>Faculty auid</th>
       <th>Students auid</th>
+      <th>Vehicle User ID </th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @vehicles.each do |vehicle| %>
-      <tr>
-        <td><%= vehicle.year %></td>
-        <td><%= vehicle.color %></td>
-        <td><%= vehicle.make %></td>
-        <td><%= vehicle.model %></td>
-        <td><%= vehicle.license_number %></td>
-        <td><%= vehicle.state_licensed %></td>
-        <td><%= vehicle.experation_year %></td>
-        <td><%= vehicle.permits_permit_number %></td>
-        <td><%= vehicle.faculty_auID %></td>
-        <td><%= vehicle.students_auID %></td>
-        <td><%= link_to 'Show', vehicle %></td>
-        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
-        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if policy(vehicle).admin_show? %>
+        <tr>
+          <td><%= vehicle.year %></td>
+          <td><%= vehicle.color %></td>
+          <td><%= vehicle.make %></td>
+          <td><%= vehicle.model %></td>
+          <td><%= vehicle.license_number %></td>
+          <td><%= vehicle.state_licensed %></td>
+          <td><%= vehicle.experation_year %></td>
+          <td><%= vehicle.permits_permit_number %></td>
+          <td><%= vehicle.faculty_auID %></td>
+          <td><%= vehicle.students_auID %></td>
+          <td><%= vehicle.user_id %></td>
+          <td><%= link_to 'Show', vehicle if policy(vehicle).show? %></td>
+          <td><%= link_to 'Edit', edit_vehicle_path(vehicle) if policy(vehicle).edit? %></td>
+          <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } if policy(vehicle).destroy? %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
+<% if policy(Vehicle).new? %>
 <%= link_to 'New Vehicle', new_vehicle_path %>
+<% end %>

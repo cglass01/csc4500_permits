@@ -1,10 +1,14 @@
 class VehiclesController < ApplicationController
   before_action :set_vehicle, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  after_action :verify_authorized
+  
 
   # GET /vehicles
   # GET /vehicles.json
   def index
     @vehicles = Vehicle.all
+    authorize @vehicles
   end
 
   # GET /vehicles/1
@@ -15,6 +19,7 @@ class VehiclesController < ApplicationController
   # GET /vehicles/new
   def new
     @vehicle = Vehicle.new
+    authorize @vehicle
   end
 
   # GET /vehicles/1/edit
@@ -24,7 +29,8 @@ class VehiclesController < ApplicationController
   # POST /vehicles
   # POST /vehicles.json
   def create
-    @vehicle = Vehicle.new(vehicle_params)
+    @vehicle = current_user.vehicles.new(vehicle_params)
+    authorize @vehicle
 
     respond_to do |format|
       if @vehicle.save
@@ -65,6 +71,7 @@ class VehiclesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_vehicle
       @vehicle = Vehicle.find(params[:id])
+      authorize @vehicle
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
