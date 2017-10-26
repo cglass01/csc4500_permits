@@ -28,7 +28,7 @@ class FacultiesController < ApplicationController
   # POST /faculties
   # POST /faculties.json
   def create
-    @faculty = Faculty.new(faculty_params)
+    @faculty = current_user.build_faculty(faculty_params)
     authorize @faculty
 
     respond_to do |format|
