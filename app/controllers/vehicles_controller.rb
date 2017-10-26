@@ -29,7 +29,7 @@ class VehiclesController < ApplicationController
   # POST /vehicles
   # POST /vehicles.json
   def create
-    @vehicle = current_user.vehicles.new(vehicle_params)
+    @vehicle = Vehicle.new(vehicle_params)
     authorize @vehicle
 
     respond_to do |format|
