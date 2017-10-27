@@ -1,6 +1,7 @@
 class CreateEmergencyContacts < ActiveRecord::Migration[5.1]
   def change
-    create_table :emergency_contacts do |t|
+    create_table :emergency_contacts, id: false do |t|
+      t.bigint :contact_id, primary_key: true, auto_increment: true
       t.string :last_name
       t.string :first_name
       t.string :address

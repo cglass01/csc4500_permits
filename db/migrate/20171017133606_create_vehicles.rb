@@ -1,6 +1,7 @@
 class CreateVehicles < ActiveRecord::Migration[5.1]
   def change
-    create_table :vehicles do |t|
+    create_table :vehicles, id: false do |t|
+      t.bigint :vehicle_id, primary_key: true, auto_increment: true
       t.string :year
       t.string :color
       t.string :make
