@@ -11,8 +11,8 @@ class CreateEmergencyContacts < ActiveRecord::Migration[5.1]
       t.string :home_phone
       t.string :cell_phone
       t.string :office_phone
-      t.string :faculty_auID
-      t.string :students_auID
+      t.string :student_id, foreign_key: true
+      t.string :faculty_id, foreign_key: true
 
       t.timestamps
     end
