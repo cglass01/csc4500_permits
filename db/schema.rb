@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171026181016) do
+ActiveRecord::Schema.define(version: 20171028010233) do
 
-  create_table "emergency_contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "emergency_contacts", primary_key: "contact_id", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "last_name"
     t.string "first_name"
     t.string "address"
@@ -22,14 +22,15 @@ ActiveRecord::Schema.define(version: 20171026181016) do
     t.string "home_phone"
     t.string "cell_phone"
     t.string "office_phone"
-    t.string "faculty_auID"
-    t.string "students_auID"
+    t.string "student_id"
+    t.string "faculty_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.index ["faculty_id"], name: "fk_rails_030581feee"
+    t.index ["student_id"], name: "fk_rails_ae91a98c1b"
   end
 
-  create_table "faculties", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "faculties", primary_key: "faculty_id", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "last_name"
     t.string "first_name"
     t.string "home_address"
@@ -44,20 +45,18 @@ ActiveRecord::Schema.define(version: 20171026181016) do
     t.string "office"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
   end
 
-  create_table "permits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "permits", primary_key: "permit_number", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "date_issued"
     t.string "issued_by"
     t.date "date_entered"
     t.string "entered_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
   end
 
-  create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "students", primary_key: "student_id", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "last_name"
     t.string "first_name"
     t.string "home_address"
@@ -75,7 +74,6 @@ ActiveRecord::Schema.define(version: 20171026181016) do
     t.string "athletic_team"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -91,12 +89,12 @@ ActiveRecord::Schema.define(version: 20171026181016) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "roles", default: "standard"
+    t.string "roles"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "vehicles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "vehicles", primary_key: "vehicle_id", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "year"
     t.string "color"
     t.string "make"
@@ -104,12 +102,20 @@ ActiveRecord::Schema.define(version: 20171026181016) do
     t.string "license_number"
     t.string "state_licensed"
     t.string "experation_year"
-    t.string "permits_permit_number"
-    t.string "faculty_auID"
-    t.string "students_auID"
+    t.string "permit_number"
+    t.string "student_id"
+    t.string "faculty_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.index ["faculty_id"], name: "fk_rails_e75e1508bb"
+    t.index ["permit_number"], name: "fk_rails_fb450a8bbd"
+    t.index ["student_id"], name: "fk_rails_8d7731d871"
   end
 
+  add_foreign_key "emergency_contacts", "faculties", primary_key: "faculty_id"
+  add_foreign_key "emergency_contacts", "students", primary_key: "student_id"
+  add_foreign_key "vehicles", "faculties", primary_key: "faculty_id"
+  add_foreign_key "vehicles", "permits", column: "permit_number", primary_key: "permit_number"
+  add_foreign_key "vehicles", "students", primary_key: "student_id"
 end
