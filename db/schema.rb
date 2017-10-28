@@ -22,17 +22,17 @@ ActiveRecord::Schema.define(version: 20171028010233) do
     t.string "home_phone"
     t.string "cell_phone"
     t.string "office_phone"
-    t.string "student_auID"
-    t.string "faculty_auID"
+    t.string "student_id"
+    t.string "faculty_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["faculty_auID"], name: "fk_rails_0e993a2e4e"
-    t.index ["student_auID"], name: "fk_rails_bcac3f536a"
+    t.index ["faculty_id"], name: "fk_rails_030581feee"
+    t.index ["student_id"], name: "fk_rails_ae91a98c1b"
     t.index ["user_id"], name: "fk_rails_8104b3f11d"
   end
 
-  create_table "faculties", primary_key: "faculty_auID", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "faculties", primary_key: "faculty_id", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "last_name"
     t.string "first_name"
     t.string "home_address"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20171028010233) do
     t.index ["user_id"], name: "fk_rails_f800e93b93"
   end
 
-  create_table "permits", primary_key: "permit_number", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "permits", primary_key: "permit_id", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "date_issued"
     t.string "issued_by"
     t.date "date_entered"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20171028010233) do
     t.index ["user_id"], name: "fk_rails_0ad440fbba"
   end
 
-  create_table "students", primary_key: "student_auID", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "students", primary_key: "student_id", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "last_name"
     t.string "first_name"
     t.string "home_address"
@@ -110,26 +110,26 @@ ActiveRecord::Schema.define(version: 20171028010233) do
     t.string "license_number"
     t.string "state_licensed"
     t.string "experation_year"
-    t.string "permit_number"
-    t.string "student_auID"
-    t.string "faculty_auID"
+    t.string "permit_id"
+    t.string "student_id"
+    t.string "faculty_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["faculty_auID"], name: "fk_rails_ed09a091fd"
-    t.index ["permit_number"], name: "fk_rails_fb450a8bbd"
-    t.index ["student_auID"], name: "fk_rails_972f9e4549"
+    t.index ["faculty_id"], name: "fk_rails_e75e1508bb"
+    t.index ["permit_id"], name: "fk_rails_2585d9a3da"
+    t.index ["student_id"], name: "fk_rails_8d7731d871"
     t.index ["user_id"], name: "fk_rails_9e34682d54"
   end
 
-  add_foreign_key "emergency_contacts", "faculties", column: "faculty_auID", primary_key: "faculty_auID"
-  add_foreign_key "emergency_contacts", "students", column: "student_auID", primary_key: "student_auID"
+  add_foreign_key "emergency_contacts", "faculties", primary_key: "faculty_id"
+  add_foreign_key "emergency_contacts", "students", primary_key: "student_id"
   add_foreign_key "emergency_contacts", "users"
   add_foreign_key "faculties", "users"
   add_foreign_key "permits", "users"
   add_foreign_key "students", "users"
-  add_foreign_key "vehicles", "faculties", column: "faculty_auID", primary_key: "faculty_auID"
-  add_foreign_key "vehicles", "permits", column: "permit_number", primary_key: "permit_number"
-  add_foreign_key "vehicles", "students", column: "student_auID", primary_key: "student_auID"
+  add_foreign_key "vehicles", "faculties", primary_key: "faculty_id"
+  add_foreign_key "vehicles", "permits", primary_key: "permit_id"
+  add_foreign_key "vehicles", "students", primary_key: "student_id"
   add_foreign_key "vehicles", "users"
 end

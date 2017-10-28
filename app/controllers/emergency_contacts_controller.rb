@@ -75,6 +75,6 @@ class EmergencyContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def emergency_contact_params
-      params.require(:emergency_contact).permit(:last_name, :first_name, :address, :city, :state, :zip, :home_phone, :cell_phone, :office_phone, :faculty_auID, :student_auID)
+      params.require(:emergency_contact).permit(:last_name, :first_name, :address, :city, :state, :zip, :home_phone, :cell_phone, :office_phone, :faculty_id, :student_id)
     end
 end
