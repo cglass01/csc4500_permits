@@ -6,6 +6,7 @@ class CreatePermits < ActiveRecord::Migration[5.1]
       t.string :issued_by
       t.date :date_entered
       t.string :entered_by
+      t.bigint :user_id, foreign_key: true
 
       t.timestamps
     end

@@ -14,6 +14,7 @@ class CreateFaculties < ActiveRecord::Migration[5.1]
       t.boolean :new_faculty
       t.string :department
       t.string :office
+      t.bigint :user_id, foreign_key: true
 
       t.timestamps
     end
