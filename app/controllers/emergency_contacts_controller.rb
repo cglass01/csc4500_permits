@@ -28,7 +28,7 @@ class EmergencyContactsController < ApplicationController
   # POST /emergency_contacts
   # POST /emergency_contacts.json
   def create
-    @emergency_contact = EmergencyContact.new(emergency_contact_params)
+    @emergency_contact = current_user.build_emergency_contact(emergency_contact_params)
     authorize @emergency_contact
 
     respond_to do |format|
