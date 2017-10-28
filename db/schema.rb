@@ -22,15 +22,15 @@ ActiveRecord::Schema.define(version: 20171028010233) do
     t.string "home_phone"
     t.string "cell_phone"
     t.string "office_phone"
-    t.string "student_id"
-    t.string "faculty_id"
+    t.string "student_auID"
+    t.string "faculty_auID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["faculty_id"], name: "fk_rails_030581feee"
-    t.index ["student_id"], name: "fk_rails_ae91a98c1b"
+    t.index ["faculty_auID"], name: "fk_rails_030581feee"
+    t.index ["student_auID"], name: "fk_rails_ae91a98c1b"
   end
 
-  create_table "faculties", primary_key: "faculty_id", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "faculties", primary_key: "faculty_auID", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "last_name"
     t.string "first_name"
     t.string "home_address"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20171028010233) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "students", primary_key: "student_id", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "students", primary_key: "student_auID", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "last_name"
     t.string "first_name"
     t.string "home_address"
@@ -103,19 +103,19 @@ ActiveRecord::Schema.define(version: 20171028010233) do
     t.string "state_licensed"
     t.string "experation_year"
     t.string "permit_number"
-    t.string "student_id"
-    t.string "faculty_id"
+    t.string "student_auID"
+    t.string "faculty_auID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.index ["faculty_id"], name: "fk_rails_e75e1508bb"
+    t.index ["faculty_auID"], name: "fk_rails_e75e1508bb"
     t.index ["permit_number"], name: "fk_rails_fb450a8bbd"
-    t.index ["student_id"], name: "fk_rails_8d7731d871"
+    t.index ["student_auID"], name: "fk_rails_8d7731d871"
   end
 
-  add_foreign_key "emergency_contacts", "faculties", primary_key: "faculty_id"
-  add_foreign_key "emergency_contacts", "students", primary_key: "student_id"
-  add_foreign_key "vehicles", "faculties", primary_key: "faculty_id"
+  add_foreign_key "emergency_contacts", "faculties", primary_key: "faculty_auID"
+  add_foreign_key "emergency_contacts", "students", primary_key: "student_auID"
+  add_foreign_key "vehicles", "faculties", primary_key: "faculty_auID"
   add_foreign_key "vehicles", "permits", column: "permit_number", primary_key: "permit_number"
-  add_foreign_key "vehicles", "students", primary_key: "student_id"
+  add_foreign_key "vehicles", "students", primary_key: "student_auID"
 end

@@ -1,7 +1,7 @@
 class CreateFaculties < ActiveRecord::Migration[5.1]
   def change
     create_table :faculties, id: false do |t|
-      t.string :faculty_id, primary_key: true
+      t.string :faculty_auID, primary_key: true
       t.string :last_name
       t.string :first_name
       t.string :home_address

@@ -10,7 +10,7 @@ one:
   experation_year: MyString
   permits_permit_number: MyString
   faculty_auID: MyString
-  students_auID: MyString
+  student_auID: MyString
 
 two:
   year: MyString
@@ -22,4 +22,4 @@ two:
   experation_year: MyString
   permits_permit_number: MyString
   faculty_auID: MyString
-  students_auID: MyString
+  student_auID: MyString
