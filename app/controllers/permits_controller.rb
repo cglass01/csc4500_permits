@@ -28,7 +28,7 @@ class PermitsController < ApplicationController
   # POST /permits
   # POST /permits.json
   def create
-    @permit = Permit.new(permit_params)
+    @permit = current_user.build_permit(permit_params)
     authorize @permit
 
     respond_to do |format|
