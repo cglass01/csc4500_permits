@@ -13,6 +13,7 @@ class CreateEmergencyContacts < ActiveRecord::Migration[5.1]
       t.string :office_phone
       t.string :student_id, foreign_key: true
       t.string :faculty_id, foreign_key: true
+      t.bigint :user_id, foreign_key:true
 
       t.timestamps
     end

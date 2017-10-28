@@ -17,6 +17,7 @@ class CreateStudents < ActiveRecord::Migration[5.1]
       t.boolean :new_student
       t.boolean :returning_student
       t.string :athletic_team
+      t.bigint :user_id, foreign_key: true
 
       t.timestamps
     end

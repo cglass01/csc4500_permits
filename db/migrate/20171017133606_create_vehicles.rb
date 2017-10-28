@@ -9,9 +9,10 @@ class CreateVehicles < ActiveRecord::Migration[5.1]
       t.string :license_number
       t.string :state_licensed
       t.string :experation_year
-      t.string :permit_number, foreign_key: true
+      t.string :permit_id, foreign_key: true
       t.string :student_id, foreign_key: true
       t.string :faculty_id, foreign_key: true
+      t.bigint :user_id, foreign_key: true
 
       t.timestamps
     end
