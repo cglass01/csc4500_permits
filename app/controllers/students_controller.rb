@@ -4,12 +4,17 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    if user_signed_in?
+      @students = Student.all.where(:user_id => current_user.id)
+    else
+      @students = Student.all
+    end
   end
 
   # GET /students/1
   # GET /students/1.json
   def show
+
   end
 
   # GET /students/new
@@ -69,6 +74,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:last_name, :first_name, :home_address, :home_city, :home_state, :home_zip, :school_year_address, :school_year_city, :school_year_zip, :room_number, :home_phone, :cell_phone, :new_student, :returning_student, :athletic_team)
+      params.require(:student).permit(:student_id, :last_name, :first_name, :home_address, :home_city, :home_state, :home_zip, :school_year_address, :school_year_city, :school_year_zip, :room_number, :home_phone, :cell_phone, :new_student, :returning_student, :athletic_team)
     end
 end
