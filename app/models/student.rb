@@ -1,6 +1,6 @@
 class Student < ApplicationRecord
 	self.primary_key = :student_id
 	belongs_to	:user
-	has_one	:emergency_contact
-	has_one	:vehicle
+	belongs_to	:emergency_contact, class_name: 'User', optional: true
+	belongs_to	:vehicle, class_name: 'User', optional: true
 end
