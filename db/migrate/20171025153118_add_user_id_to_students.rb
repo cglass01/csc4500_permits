@@ -1,5 +1,5 @@
 class AddUserIdToStudents < ActiveRecord::Migration[5.1]
   def change
-    add_column :students, :user_id, :integer
+    add_foreign_key :students, :users
   end
 end
