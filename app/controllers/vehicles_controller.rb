@@ -7,7 +7,11 @@ class VehiclesController < ApplicationController
   # GET /vehicles
   # GET /vehicles.json
   def index
-    @vehicles = Vehicle.all
+     if user_signed_in?
+      @vehicles = Vehicle.all.where(:user_id => current_user.id)
+    else
+      @vehicles = Vehicle.all
+    end
     authorize @vehicles
   end
 
