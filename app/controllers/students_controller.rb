@@ -4,7 +4,9 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    if user_signed_in?
+    if current_user.roles == 'admin'
+      @students = Student.all
+    elsif user_signed_in?
       @students = Student.all.where(:user_id => current_user.id)
     else
       @students = Student.all

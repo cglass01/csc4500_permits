@@ -11,5 +11,7 @@ ActiveAdmin.register Student do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+permit_params :student_id
+config.sort_order = 'student_id'
 
 end

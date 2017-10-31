@@ -6,7 +6,9 @@ class FacultiesController < ApplicationController
   # GET /faculties
   # GET /faculties.json
   def index
-     if user_signed_in?
+    if current_user.roles == 'admin'
+      @faculties = Faculty.all
+    elsif user_signed_in?
       @faculties = Faculty.all.where(:user_id => current_user.id)
     else
       @faculties = Faculty.all
