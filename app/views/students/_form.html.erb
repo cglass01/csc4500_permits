@@ -91,6 +91,18 @@
     <%= form.text_field :athletic_team, id: :student_athletic_team %>
   </div>
 
+  <div class="form_group">
+    <%= form.fields_for :vehicle, Vehicle.new do |v| %>
+      <%= v.label :license_number, "License Plate" %>
+      <%= v.text_field :license_number %>
+    </br>
+  </div>
+  <div class="form_group">
+    <%= v.label :year, "Vehicle Year" %>
+      <%= v.text_field :year %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -3,5 +3,5 @@ class Vehicle < ApplicationRecord
 	belongs_to	:user
 	belongs_to	:student, optional: true
 	belongs_to	:faculty, optional: true
-	belongs_to	:permit, optional: true
+	belongs_to	:permit
 end
