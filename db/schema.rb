@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20171031141704) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["faculty_id"], name: "fk_rails_030581feee"
+    t.index ["student_id"], name: "fk_rails_ae91a98c1b"
     t.index ["user_id"], name: "fk_rails_8104b3f11d"
   end
 
@@ -153,6 +154,7 @@ ActiveRecord::Schema.define(version: 20171031141704) do
   end
 
   add_foreign_key "emergency_contacts", "faculties", primary_key: "faculty_id"
+  add_foreign_key "emergency_contacts", "students", primary_key: "student_id"
   add_foreign_key "emergency_contacts", "users"
   add_foreign_key "faculties", "users"
   add_foreign_key "permits", "users"

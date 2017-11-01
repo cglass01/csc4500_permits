@@ -32,7 +32,9 @@
       <ul class="nav navbar-nav navbar-right">
 	  
 		<% if user_signed_in? %>
-      <li><a href="/admin">Admin</a></li>
+      <% if current_user.roles == 'admin' %>
+        <li><a href="/admin">Admin</a></li>
+      <% end %>
 		  <li><%= link_to current_user.email, edit_user_registration_path %></li>
 		  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
 		<% else %>
