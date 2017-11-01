@@ -6,7 +6,11 @@ class PermitsController < ApplicationController
   # GET /permits
   # GET /permits.json
   def index
-    @permits = Permit.all
+     if user_signed_in?
+      @permits = Permit.all.where(:user_id => current_user.id)
+    else
+      @permits = Permit.all
+    end
     authorize @permits
   end
 
