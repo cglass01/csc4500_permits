@@ -4,11 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_one :vehicle, class_name: 'User'
-  has_one :permit, class_name: 'User'
-  has_one :faculty, class_name: 'User'
-  has_one :emergency_contact, class_name: 'User'
-  has_one :student, class_name: 'User'
+  has_one :vehicle
+  has_one :permit
+  has_one :faculty
+  has_one :emergency_contact
+  has_one :student
+
 
   def admin?
   	roles == "admin"
