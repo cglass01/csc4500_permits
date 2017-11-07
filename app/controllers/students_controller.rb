@@ -23,7 +23,6 @@ class StudentsController < ApplicationController
   # GET /students/new
   def new
     @student = Student.new
-    @student.vehicle.new
   end
 
   # GET /students/1/edit
