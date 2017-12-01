@@ -1,0 +1,358 @@
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT GET_LOCK(3336061282336681500, 0)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddStudentsToVehicles (20171028005901)
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE `vehicles` ADD CONSTRAINT `fk_rails_8d7731d871`
+FOREIGN KEY (`student_id`)
+  REFERENCES `students` (`student_id`)
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT RELEASE_LOCK(3336061282336681500)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT GET_LOCK(3336061282336681500, 0)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddStudentsToVehicles (20171028005901)
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE `vehicles` ADD CONSTRAINT `fk_rails_8d7731d871`
+FOREIGN KEY (`student_id`)
+  REFERENCES `students` (`student_id`)
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT RELEASE_LOCK(3336061282336681500)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT GET_LOCK(3336061282336681500, 0)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddStudentsToVehicles (20171028005901)
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE `vehicles` ADD CONSTRAINT `fk_rails_8d7731d871`
+FOREIGN KEY (`student_id`)
+  REFERENCES `students` (`student_id`)
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT RELEASE_LOCK(3336061282336681500)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT GET_LOCK(3336061282336681500, 0)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddStudentsToVehicles (20171028005901)
+  [1m[35m (0.0ms)[0m  [1m[35mALTER TABLE `vehicles` ADD CONSTRAINT `fk_rails_8d7731d871`
+FOREIGN KEY (`student_id`)
+  REFERENCES `students` (`student_id`)
+[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT RELEASE_LOCK(3336061282336681500)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (295.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (273.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT GET_LOCK(3336061282336681500, 0)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateStudents (20171017132803)
+  [1m[35m (219.6ms)[0m  [1m[35mCREATE TABLE `students` (`student_id` varchar(255) NOT NULL PRIMARY KEY, `last_name` varchar(255) NOT NULL, `first_name` varchar(255) NOT NULL, `home_address` varchar(255) NOT NULL, `home_city` varchar(255) NOT NULL, `home_state` varchar(255) NOT NULL, `home_zip` varchar(255) NOT NULL, `school_year_address` varchar(255) NOT NULL, `school_year_city` varchar(255) NOT NULL, `school_year_zip` varchar(255) NOT NULL, `room_number` varchar(255), `home_phone` varchar(255), `cell_phone` varchar(255), `new_student` tinyint(1), `returning_student` tinyint(1), `athletic_team` varchar(255), `user_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171017132803')[0m
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFaculties (20171017133049)
+  [1m[35m (307.8ms)[0m  [1m[35mCREATE TABLE `faculties` (`faculty_id` varchar(255) NOT NULL PRIMARY KEY, `last_name` varchar(255) NOT NULL, `first_name` varchar(255) NOT NULL, `home_address` varchar(255) NOT NULL, `city` varchar(255) NOT NULL, `state` varchar(255) NOT NULL, `zip` varchar(255) NOT NULL, `home_phone` varchar(255), `cell_phone` varchar(255), `office_phone` varchar(255), `new_faculty` tinyint(1), `department` varchar(255) NOT NULL, `office` varchar(255) NOT NULL, `user_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171017133049')[0m
+  [1m[35m (45.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEmergencyContacts (20171017133248)
+  [1m[35m (261.2ms)[0m  [1m[35mCREATE TABLE `emergency_contacts` (`contact_id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `last_name` varchar(255) NOT NULL, `first_name` varchar(255) NOT NULL, `address` varchar(255) NOT NULL, `city` varchar(255) NOT NULL, `state` varchar(255) NOT NULL, `zip` varchar(255) NOT NULL, `home_phone` varchar(255), `cell_phone` varchar(255), `office_phone` varchar(255), `student_id` varchar(255), `faculty_id` varchar(255), `user_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171017133248')[0m
+  [1m[35m (41.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateVehicles (20171017133606)
+  [1m[35m (255.6ms)[0m  [1m[35mCREATE TABLE `vehicles` (`vehicle_id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `year` varchar(255) NOT NULL, `color` varchar(255) NOT NULL, `make` varchar(255) NOT NULL, `model` varchar(255) NOT NULL, `license_number` varchar(255) NOT NULL, `state_licensed` varchar(255) NOT NULL, `experation_year` varchar(255) NOT NULL, `vehicle_permit_id` varchar(255), `student_id` varchar(255), `faculty_id` varchar(255), `user_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171017133606')[0m
+  [1m[35m (16.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateVehiclePermits (20171017133846)
+  [1m[35m (274.8ms)[0m  [1m[35mCREATE TABLE `vehicle_permits` (`vehicle_permit_id` varchar(255) NOT NULL PRIMARY KEY, `date_issued` datetime NOT NULL, `issued_by` varchar(255) NOT NULL, `date_entered` date NOT NULL, `entered_by` varchar(255) NOT NULL, `user_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171017133846')[0m
+  [1m[35m (22.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20171023190707)
+  [1m[35m (358.3ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (169.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (174.6ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171023190707')[0m
+  [1m[35m (55.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRoleToUser (20171024000220)
+  [1m[35m (593.8ms)[0m  [1m[35mALTER TABLE `users` ADD `roles` varchar(255)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (16.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171024000220')[0m
+  [1m[35m (32.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserIdToVehicles (20171024135904)
+  [1m[35m (677.2ms)[0m  [1m[35mALTER TABLE `vehicles` ADD CONSTRAINT `fk_rails_9e34682d54`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (18.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171024135904')[0m
+  [1m[35m (51.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserIdToFaculty (20171024204539)
+  [1m[35m (616.1ms)[0m  [1m[35mALTER TABLE `faculties` ADD CONSTRAINT `fk_rails_f800e93b93`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171024204539')[0m
+  [1m[35m (30.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeRolesDefaultValueInUsers (20171024210732)
+  [1m[35m (42.7ms)[0m  [1m[35mALTER TABLE `users` CHANGE `roles` `roles` varchar(255) DEFAULT 'standard'[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (13.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171024210732')[0m
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserIdToStudents (20171025153118)
+  [1m[35m (751.5ms)[0m  [1m[35mALTER TABLE `students` ADD CONSTRAINT `fk_rails_148c9e88f4`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171025153118')[0m
+  [1m[35m (34.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserIdToVehiclePermits (20171026175925)
+  [1m[35m (771.4ms)[0m  [1m[35mALTER TABLE `vehicle_permits` ADD CONSTRAINT `fk_rails_9e850af0b0`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171026175925')[0m
+  [1m[35m (17.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserIdToEmergencyContacts (20171026181016)
+  [1m[35m (999.6ms)[0m  [1m[35mALTER TABLE `emergency_contacts` ADD CONSTRAINT `fk_rails_8104b3f11d`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (12.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171026181016')[0m
+  [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddFacultiesToEmergencyContacts (20171027163918)
+  [1m[35m (764.0ms)[0m  [1m[35mALTER TABLE `emergency_contacts` ADD CONSTRAINT `fk_rails_030581feee`
+FOREIGN KEY (`faculty_id`)
+  REFERENCES `faculties` (`faculty_id`)
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (10.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171027163918')[0m
+  [1m[35m (54.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddStudentsToEmergencyContacts (20171028004844)
+  [1m[35m (718.4ms)[0m  [1m[35mALTER TABLE `emergency_contacts` ADD CONSTRAINT `fk_rails_ae91a98c1b`
+FOREIGN KEY (`student_id`)
+  REFERENCES `students` (`student_id`)
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171028004844')[0m
+  [1m[35m (145.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddVehiclePermitsToVehicles (20171028005847)
+  [1m[35m (926.4ms)[0m  [1m[35mALTER TABLE `vehicles` ADD CONSTRAINT `fk_rails_2c22d44ed0`
+FOREIGN KEY (`vehicle_permit_id`)
+  REFERENCES `vehicle_permits` (`vehicle_permit_id`)
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171028005847')[0m
+  [1m[35m (19.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddStudentsToVehicles (20171028005901)
+  [1m[35m (1089.7ms)[0m  [1m[35mALTER TABLE `vehicles` ADD CONSTRAINT `fk_rails_8d7731d871`
+FOREIGN KEY (`student_id`)
+  REFERENCES `students` (`student_id`)
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (12.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171028005901')[0m
+  [1m[35m (48.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddFacultiesToVehicles (20171028010233)
+  [1m[35m (1383.7ms)[0m  [1m[35mALTER TABLE `vehicles` ADD CONSTRAINT `fk_rails_e75e1508bb`
+FOREIGN KEY (`faculty_id`)
+  REFERENCES `faculties` (`faculty_id`)
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (31.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171028010233')[0m
+  [1m[35m (33.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateAdminUsers (20171031141657)
+  [1m[35m (240.6ms)[0m  [1m[35mCREATE TABLE `admin_users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (242.3ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_admin_users_on_email`  ON `admin_users` (`email`) [0m
+  [1m[35m (186.9ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_admin_users_on_reset_password_token`  ON `admin_users` (`reset_password_token`) [0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (10.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171031141657')[0m
+  [1m[35m (42.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveAdminComments (20171031141704)
+  [1m[35m (384.5ms)[0m  [1m[35mCREATE TABLE `active_admin_comments` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `namespace` varchar(255), `body` text, `resource_type` varchar(255), `resource_id` bigint, `author_type` varchar(255), `author_id` bigint, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_active_admin_comments_on_resource_type_and_resource_id`  (`resource_type`, `resource_id`),  INDEX `index_active_admin_comments_on_author_type_and_author_id`  (`author_type`, `author_id`)) ENGINE=InnoDB[0m
+  [1m[35m (353.5ms)[0m  [1m[35mCREATE  INDEX `index_active_admin_comments_on_namespace`  ON `active_admin_comments` (`namespace`) [0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171031141704')[0m
+  [1m[35m (32.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPositionToUsers (20171108173321)
+  [1m[35m (587.3ms)[0m  [1m[35mALTER TABLE `users` ADD `position` varchar(255)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (22.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171108173321')[0m
+  [1m[35m (94.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePermitTrigger (20171201105329)
+  [1m[35m (81.1ms)[0m  [1m[35m		CREATE TRIGGER `vehicle_permits_BEFORE_INSERT` 
+		BEFORE INSERT ON `vehicle_permits` FOR EACH ROW
+		BEGIN
+			SET NEW.vehicle_permit_id = UPPER(NEW.vehicle_permit_id);
+		END
+[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20171201105329')[0m
+  [1m[35m (24.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (31.0ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (18.5ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-12-01 17:52:39', '2017-12-01 17:52:39')[0m
+  [1m[35m (41.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT RELEASE_LOCK(3336061282336681500)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (16.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'emailcrusher@email.com' LIMIT 1[0m
+  [1m[35mSQL (12.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('emailcrusher@email.com', '$2a$11$QAxQI1q6SA2ZvMFx15v1/e87TbDrwzgM3814efo1NHsRdePt/lNoO', '2015-02-03 10:54:35', '2015-02-03 10:54:35')[0m
+  [1m[35m (39.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'newsmaker@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('newsmaker@email.com', '$2a$11$cD9HWgxU3bCdTICI3ZxrA.w5Sb1UX1b2DLuxEvJsIH77hfTMT9f1G', '2015-04-03 12:54:35', '2015-12-03 10:54:35')[0m
+  [1m[35m (51.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'studenthome@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `position`) VALUES ('studenthome@email.com', '$2a$11$cl6FIPsAdk/ysL95WiJ9r.sc42GiriMq81r.Df/PYpHbbMPGF7mme', '2016-05-25 10:00:35', '2016-06-20 11:44:35', 'Student')[0m
+  [1m[35m (18.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'teacherwork@email.com' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `position`) VALUES ('teacherwork@email.com', '$2a$11$lHKbYdvQ.smepBYo9JyIyui8uNN1.t2hH8OKovy4lSB/PAfkCbGn2', '2012-08-25 12:05:35', '2017-08-25 11:44:35', 'Faculty')[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'superadmin@email.com' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `position`) VALUES ('superadmin@email.com', '$2a$11$LZE9loTU3AvtuW2h0ldQj.bz2yiVan0djNeLrWniVkZUWk0..fw.u', '2012-08-25 12:05:35', '2017-08-25 11:44:35', 'admin')[0m
+  [1m[35m (20.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'editmon@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `position`) VALUES ('editmon@email.com', '$2a$11$KHQZmUXEPtJlta80aORsluPLSehIouXk.K/1SYTTTZ93dSBKWddQm', '2012-08-25 12:05:35', '2017-08-25 11:44:35', 'editor')[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (29.0ms)[0m  [1m[32mINSERT INTO `students` (`student_id`, `last_name`, `first_name`, `home_address`, `home_city`, `home_state`, `home_zip`, `school_year_address`, `school_year_city`, `school_year_zip`, `room_number`, `home_phone`, `cell_phone`, `new_student`, `returning_student`, `athletic_team`, `user_id`, `created_at`, `updated_at`) VALUES ('1234567', 'jacobs', 'boxer', '257 Discovery road', 'Rockford', 'Illinois', '60106', '257 Discovery road', 'Rockford', '60106', 'NULL', '3518759989', '9856243571', 0, 1, 'NULL', 3, '2016-05-25 10:00:35', '2016-06-20 11:44:35')[0m
+  [1m[35m (66.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (11.0ms)[0m  [1m[32mINSERT INTO `faculties` (`faculty_id`, `last_name`, `first_name`, `home_address`, `city`, `state`, `zip`, `home_phone`, `cell_phone`, `office_phone`, `new_faculty`, `department`, `office`, `user_id`, `created_at`, `updated_at`) VALUES ('0983547', 'Kane', 'Jeffery', '156 Lake St', 'Aurora', 'Illinois', '60505', '3313568794', '6305896245', '6302569874', 0, 'Math', 'Dun 215', 4, '2012-08-25 10:00:35', '2017-08-20 11:44:35')[0m
+  [1m[35m (35.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (67.0ms)[0m  [1m[32mINSERT INTO `emergency_contacts` (`last_name`, `first_name`, `address`, `city`, `state`, `zip`, `home_phone`, `cell_phone`, `office_phone`, `faculty_id`, `user_id`, `created_at`, `updated_at`) VALUES ('emery', 'liz', '357 Some ave', 'SomeTown', 'Illinois', '60542', '6897541235', '6872654132', '235146215', '0983547', 4, '2015-04-03 12:54:35', '2015-12-03 10:54:35')[0m
+  [1m[35m (39.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (33.0ms)[0m  [1m[32mINSERT INTO `vehicle_permits` (`vehicle_permit_id`, `date_issued`, `issued_by`, `date_entered`, `entered_by`, `user_id`, `created_at`, `updated_at`) VALUES ('38546', '2017-08-25 10:00:35', 'Steve', '2017-08-25', 'Jeffery Kane', 4, '2012-08-25 10:00:35', '2017-08-20 11:44:35')[0m
+  [1m[35m (43.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (13.0ms)[0m  [1m[32mINSERT INTO `vehicles` (`year`, `color`, `make`, `model`, `license_number`, `state_licensed`, `experation_year`, `vehicle_permit_id`, `faculty_id`, `user_id`, `created_at`, `updated_at`) VALUES ('2009', 'red', 'Ford', 'Fiesta', 'K59879515', 'IL', '2020', '38546', '0983547', 4, '2012-08-25 10:00:35', '2017-08-20 11:44:35')[0m
+  [1m[35m (37.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'studenttwo@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `position`) VALUES ('studenttwo@email.com', '$2a$11$q3uvGHa1TAYKlQLYZrqZWO1IThr8RUihD7i/9G1RUwklYqryCN4u.', '2016-05-25 10:00:35', '2016-06-20 11:44:35', 'Student')[0m
+  [1m[35m (29.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `students` (`student_id`, `last_name`, `first_name`, `home_address`, `home_city`, `home_state`, `home_zip`, `school_year_address`, `school_year_city`, `school_year_zip`, `room_number`, `home_phone`, `cell_phone`, `new_student`, `returning_student`, `athletic_team`, `user_id`, `created_at`, `updated_at`) VALUES ('9876543', 'Ryan', 'Dan', '567 Construction St', 'Lake Forest', 'Illinois', '64126', '156 Lake St', 'Aurora', '60505', 'NULL', '3313568794', '3526498752', 0, 1, 'NULL', 7, '2016-05-25 10:00:35', '2016-06-20 11:44:35')[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (14.0ms)[0m  [1m[32mINSERT INTO `emergency_contacts` (`last_name`, `first_name`, `address`, `city`, `state`, `zip`, `home_phone`, `cell_phone`, `office_phone`, `student_id`, `user_id`, `created_at`, `updated_at`) VALUES ('Ryan', 'Sam', '567 Construction St', 'Lake Forest', 'Illinois', '64126', '3313568794', '3315648925', 'NULL', '9876543', 7, '2015-04-03 12:54:35', '2015-12-03 10:54:35')[0m
+  [1m[35m (50.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (42.0ms)[0m  [1m[32mINSERT INTO `vehicle_permits` (`vehicle_permit_id`, `date_issued`, `issued_by`, `date_entered`, `entered_by`, `user_id`, `created_at`, `updated_at`) VALUES ('38567', '2017-08-25 10:20:42', 'Paul', '2017-08-25', 'Dan Ryan', 7, '2017-08-25 10:20:41', '2017-08-25 10:20:42')[0m
+  [1m[35m (22.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `vehicles` (`year`, `color`, `make`, `model`, `license_number`, `state_licensed`, `experation_year`, `vehicle_permit_id`, `student_id`, `user_id`, `created_at`, `updated_at`) VALUES ('2014', 'blue', 'Lexus', 'IS', 'M35486514', 'IL', '2025', '38567', '9876543', 7, '2012-08-25 10:00:35', '2017-08-20 11:44:35')[0m
+  [1m[35m (63.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'teacher02@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `position`) VALUES ('teacher02@email.com', '$2a$11$BXt5ZbCslPFtCyyKf6LoWODDCfAViLEZ3oqJUrFhUtbbMWbWV1Ozm', '2017-01-01 10:00:00', '2017-06-20 10:04:00', 'Faculty')[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (25.0ms)[0m  [1m[32mINSERT INTO `faculties` (`faculty_id`, `last_name`, `first_name`, `home_address`, `city`, `state`, `zip`, `home_phone`, `cell_phone`, `office_phone`, `new_faculty`, `department`, `office`, `user_id`, `created_at`, `updated_at`) VALUES ('3568971', 'Grosby', 'Maxwell', '351 Waterfall rd', 'Batavia', 'Illinois', '60352', '3316598241', '6302569874', '6302354681', 1, 'Math', 'Dun 217', 8, '2017-01-01 10:00:02', '2017-06-20 10:04:00')[0m
+  [1m[35m (36.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdminUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admin_users` WHERE `admin_users`.`email` = BINARY 'admin@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `admin_users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('admin@example.com', '$2a$11$VOI9tk8//8mDS9IjQDbuFukcvOIAa.KBVVkBDBotVJO00SOVQy2eS', '2017-12-01 18:53:42', '2017-12-01 18:53:42')[0m
+  [1m[35m (29.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdminUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admin_users` WHERE `admin_users`.`email` = BINARY 'coolguy@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `admin_users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('coolguy@example.com', '$2a$11$bcrxD.GBsCl9.y.bJhoYPuj8QJwvVUujHohT3Pc2nkMlh5MVMAYxW', '2017-12-01 18:53:42', '2017-12-01 18:53:42')[0m
+  [1m[35m (40.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdminUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admin_users` WHERE `admin_users`.`email` = BINARY 'otherbro@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `admin_users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('otherbro@example.com', '$2a$11$8c8n9qoYpmDWyDZQKYEe7ewFiuZdoavrH6eNk1aNjWBJ5mn5A./MO', '2017-12-01 18:53:42', '2017-12-01 18:53:42')[0m
+  [1m[35m (18.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdminUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admin_users` WHERE `admin_users`.`email` = BINARY 'someguy@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `admin_users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('someguy@example.com', '$2a$11$XXT/rdtEqyia4xQ92JIJr.JOR6VfDL.6y5P31LdnwY7PfO84MPvD2', '2017-12-01 18:53:42', '2017-12-01 18:53:42')[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdminUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admin_users` WHERE `admin_users`.`email` = BINARY 'gentleman@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `admin_users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('gentleman@example.com', '$2a$11$Esv82TWUcjDUDN08XfUdt.ckTPqgqpbzNNg8GhxRqSyMGS2wqapXi', '2017-12-01 18:53:42', '2017-12-01 18:53:42')[0m
+  [1m[35m (18.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (28.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'curlymoe@email.com' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `position`) VALUES ('curlymoe@email.com', '$2a$11$AknSGhwyEA3V3owluMIpme/jxnZaGPCOVoRjYp49K6Par7I0VVvs.', '2017-02-01 10:00:00', '2017-06-20 10:04:00', 'Faculty')[0m
+  [1m[35m (20.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'moelarry@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `position`) VALUES ('moelarry@email.com', '$2a$11$vNJHm3FtRxT5vrA9oUgbneDqhi6QEkkQGcW2y35P24gzZZpUPO222', '2014-03-01 10:00:00', '2017-06-20 10:04:00', 'Faculty')[0m
+  [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'larrycurly@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `position`) VALUES ('larrycurly@email.com', '$2a$11$Qethbabm0mCAONpGqfiV/OvI4fweX6IhUxsrAgI6hsQbyY4R0IdFq', '2015-04-01 10:00:00', '2017-06-20 10:04:00', 'Faculty')[0m
+  [1m[35m (23.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `faculties` (`faculty_id`, `last_name`, `first_name`, `home_address`, `city`, `state`, `zip`, `home_phone`, `cell_phone`, `new_faculty`, `department`, `office`, `user_id`, `created_at`, `updated_at`) VALUES ('0258613', 'Moe', 'Moe', '123 Stooge rd', 'Chicago', 'Illinois', '60352', '6305879520', '6309758241', 1, 'Science', 'Dun 101', 10, '2014-03-01 10:00:02', '2017-06-20 10:04:00')[0m
+  [1m[35m (26.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `faculties` (`faculty_id`, `last_name`, `first_name`, `home_address`, `city`, `state`, `zip`, `home_phone`, `new_faculty`, `department`, `office`, `user_id`, `created_at`, `updated_at`) VALUES ('0259621', 'Larry', 'Larry', '123 Stooge rd', 'Chicago', 'Illinois', '60352', '6305879520', 1, 'Engineering', 'Dun 101', 11, '2015-04-01 10:00:02', '2017-06-20 10:04:00')[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `faculties` (`faculty_id`, `last_name`, `first_name`, `home_address`, `city`, `state`, `zip`, `office_phone`, `new_faculty`, `department`, `office`, `user_id`, `created_at`, `updated_at`) VALUES ('0256987', 'Curly', 'Curly', '123 Stooge rd', 'Chicago', 'Illinois', '60352', '6302354681', 1, 'Math', 'Dun 101', 9, '2017-02-01 10:00:02', '2017-06-20 10:04:00')[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'studentschool@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `position`) VALUES ('studentschool@email.com', '$2a$11$22xYsgrTb4HIPuCDuLbkqecmJPye7teBUcueJwRJxIx2YXbFH5eTe', '2016-05-25 10:00:35', '2016-06-20 11:44:35', 'Student')[0m
+  [1m[35m (31.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'studentapart@email.com' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `position`) VALUES ('studentapart@email.com', '$2a$11$9WBKAu/iIr2IjB4acCW3g.GyPuwIaXDG4/do6q/FgF9jsZ2I.3AZm', '2016-05-25 11:00:35', '2016-05-20 11:44:35', 'Student')[0m
+  [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'studentstudio@email.com' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `position`) VALUES ('studentstudio@email.com', '$2a$11$vcAXSkhNG0i5n5tPrenEMuaARVAa9NElZR5AZxfc28A034VsJLXB6', '2016-05-25 12:00:35', '2016-07-20 11:44:35', 'Student')[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `students` (`student_id`, `last_name`, `first_name`, `home_address`, `home_city`, `home_state`, `home_zip`, `school_year_address`, `school_year_city`, `school_year_zip`, `room_number`, `home_phone`, `cell_phone`, `new_student`, `returning_student`, `athletic_team`, `user_id`, `created_at`, `updated_at`) VALUES ('0983571', 'Mario', 'Mario', '681 Toad St', 'toadsville', 'Arizona', '35891', '610 Randall St', 'Aurora', '60505', '105', '6302589631', '3317854692', 1, 0, 'Football', 12, '2016-05-25 10:00:35', '2016-06-20 11:44:35')[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `students` (`student_id`, `last_name`, `first_name`, `home_address`, `home_city`, `home_state`, `home_zip`, `school_year_address`, `school_year_city`, `school_year_zip`, `room_number`, `home_phone`, `cell_phone`, `new_student`, `returning_student`, `athletic_team`, `user_id`, `created_at`, `updated_at`) VALUES ('3871596', 'Mario', 'Luigi', '365 Legacy Ln', 'toadinton', 'Delaware', '24937', '610 Randall St', 'Aurora', '60505', '106', '6305793510', '3319876203', 1, 0, 'Track', 13, '2016-05-25 10:00:35', '2016-06-20 11:44:35')[0m
+  [1m[35m (53.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (75.1ms)[0m  [1m[32mINSERT INTO `students` (`student_id`, `last_name`, `first_name`, `home_address`, `home_city`, `home_state`, `home_zip`, `school_year_address`, `school_year_city`, `school_year_zip`, `room_number`, `home_phone`, `cell_phone`, `new_student`, `returning_student`, `athletic_team`, `user_id`, `created_at`, `updated_at`) VALUES ('0823654', 'Skywalker', 'Luke', '492 Surpirse Bvld', 'Moonshine', 'Wyoming', '92828', '610 Randall St', 'Aurora', '60505', '107', '6305493152', '3316569434', 1, 0, 'Golf', 14, '2016-05-25 10:00:35', '2016-06-20 11:44:35')[0m
+  [1m[35m (21.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (15.0ms)[0m  [1m[32mINSERT INTO `emergency_contacts` (`last_name`, `first_name`, `address`, `city`, `state`, `zip`, `home_phone`, `cell_phone`, `office_phone`, `faculty_id`, `user_id`, `created_at`, `updated_at`) VALUES ('Hill', 'Hank', '568 Honeywell St', 'Jamming', 'Texas', '28715', '5864148563', '3315553232', '5486532013', '0259621', 11, '2017-03-03 12:54:35', '2017-12-03 10:54:35')[0m
+  [1m[35m (38.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `emergency_contacts` (`last_name`, `first_name`, `address`, `city`, `state`, `zip`, `home_phone`, `cell_phone`, `student_id`, `user_id`, `created_at`, `updated_at`) VALUES ('Simpson', 'Homer', '645 Gladmin Rd', 'Lipskin', 'North Dakota', '45871', '8456754685', '4586456892', '3871596', 13, '2017-04-03 12:54:35', '2017-12-03 10:54:35')[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (87.1ms)[0m  [1m[32mINSERT INTO `emergency_contacts` (`last_name`, `first_name`, `address`, `city`, `state`, `zip`, `home_phone`, `cell_phone`, `student_id`, `user_id`, `created_at`, `updated_at`) VALUES ('Myers', 'Frank', '452 Lasky Ln', 'SomeTown', 'South Dakota', '45683', '1485695689', '4586784567', '0823654', 14, '2017-05-03 12:54:35', '2017-12-03 10:54:35')[0m
+  [1m[35m (22.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (17.0ms)[0m  [1m[32mINSERT INTO `vehicle_permits` (`vehicle_permit_id`, `date_issued`, `issued_by`, `date_entered`, `entered_by`, `user_id`, `created_at`, `updated_at`) VALUES ('02134568', '2017-08-05 10:20:42', 'Paul', '2017-08-03', 'Larry Larry', 11, '2017-08-05 10:20:41', '2017-08-25 10:20:42')[0m
+  [1m[35m (24.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (17.0ms)[0m  [1m[32mINSERT INTO `vehicle_permits` (`vehicle_permit_id`, `date_issued`, `issued_by`, `date_entered`, `entered_by`, `user_id`, `created_at`, `updated_at`) VALUES ('45867235', '2017-07-19 10:20:42', 'John', '2017-07-15', 'Luigi Mario', 13, '2017-07-19 10:20:41', '2017-08-25 10:20:42')[0m
+  [1m[35m (58.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (31.0ms)[0m  [1m[32mINSERT INTO `vehicle_permits` (`vehicle_permit_id`, `date_issued`, `issued_by`, `date_entered`, `entered_by`, `user_id`, `created_at`, `updated_at`) VALUES ('543683654', '2017-01-10 10:20:42', 'Lucius', '2017-01-05', 'Luke Skywalker', 14, '2017-01-10 10:20:41', '2017-08-25 10:20:42')[0m
+  [1m[35m (21.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `vehicles` (`year`, `color`, `make`, `model`, `license_number`, `state_licensed`, `experation_year`, `vehicle_permit_id`, `faculty_id`, `user_id`, `created_at`, `updated_at`) VALUES ('2010', 'Orange', 'BMW', 'X3', 'G53684554', 'IL', '2020', '02134568', '0259621', 11, '2012-01-25 10:00:35', '2017-12-20 11:44:35')[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `vehicles` (`year`, `color`, `make`, `model`, `license_number`, `state_licensed`, `experation_year`, `vehicle_permit_id`, `student_id`, `user_id`, `created_at`, `updated_at`) VALUES ('2003', 'Purple', 'Honda', 'Accord', 'V45865848', 'DE', '2021', '45867235', '3871596', 13, '2012-06-25 11:15:03', '2017-12-20 11:44:35')[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO `vehicles` (`year`, `color`, `make`, `model`, `license_number`, `state_licensed`, `experation_year`, `vehicle_permit_id`, `student_id`, `user_id`, `created_at`, `updated_at`) VALUES ('2016', 'White', 'Chevrolet', 'Traverse', 'P45864869', 'WY', '2019', '543683654', '0823654', 14, '2012-08-25 12:01:36', '2017-11-20 11:44:35')[0m
+  [1m[35m (20.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `students`[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `faculties`[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `emergency_contacts`[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `vehicles`[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `vehicle_permits`[0m
