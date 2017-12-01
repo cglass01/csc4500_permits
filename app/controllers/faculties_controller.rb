@@ -6,19 +6,27 @@ class FacultiesController < ApplicationController
   # GET /faculties
   # GET /faculties.json
   def index
-    if current_user.roles == 'admin'
+    if current_user.roles == 'admin' or current_user.roles == 'editor' #checks if user is admin, if so displays all of the faculty in database.
       @faculties = Faculty.all
     elsif user_signed_in?
-      @faculties = Faculty.all.where(:user_id => current_user.id)
+      @faculties = Faculty.all.where(:user_id => current_user.id) #Only displays the the users faculty.
     else
       @faculties = Faculty.all
     end
+
+    if params[:search]
+        @faculties = Faculty.search(params[:search]).order("created_at DESC")
+      else
+        @faculties = Faculty.all.order('created_at DESC')
+      end
     authorize @faculties
   end
 
   # GET /faculties/1
   # GET /faculties/1.json
   def show
+    @faculties = Faculty.find(params[:id])
+    @vehicles = @faculties.vehicles
   end
 
   # GET /faculties/new
@@ -34,7 +42,7 @@ class FacultiesController < ApplicationController
   # POST /faculties
   # POST /faculties.json
   def create
-    @faculty = current_user.build_faculty(faculty_params)
+    @faculty = current_user.build_faculty(faculty_params) #When creating the faculty, it connects current logged in user to the created faculty.
     authorize @faculty
 
     respond_to do |format|
