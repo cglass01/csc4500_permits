@@ -1,0 +1,57 @@
+
+<p>
+  <strong>Year:</strong>
+  <%= @vehicle.year %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @vehicle.color %>
+</p>
+
+<p>
+  <strong>Make:</strong>
+  <%= @vehicle.make %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @vehicle.model %>
+</p>
+
+<p>
+  <strong>License number:</strong>
+  <%= @vehicle.license_number %>
+</p>
+
+<p>
+  <strong>State licensed:</strong>
+  <%= @vehicle.state_licensed %>
+</p>
+
+<p>
+  <strong>Experation year:</strong>
+  <%= @vehicle.experation_year %>
+</p>
+
+<p>
+  <strong>Permits permit number:</strong>
+  <%= @vehicle.vehicle_permit_id %>
+</p>
+
+<% if @vehicle.faculty_id.present? %>
+  <p>
+    <strong>Faculty AUID:</strong>
+    <%= link_to @vehicle.faculty.first_name + " " + @vehicle.faculty.last_name, faculty_path(@vehicle.faculty_id) %>
+  </p>
+<% end %>
+
+<% if @vehicle.student_id.present? %>
+  <p>
+    <strong>Students AUID:</strong>
+    <%= link_to @vehicle.student.first_name + " " + @vehicle.student.last_name, student_path(@vehicle.student_id) %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit | ', edit_vehicle_path(@vehicle) if policy(@vehicle).edit? %> 
+<%= link_to 'Back', vehicles_path %>
